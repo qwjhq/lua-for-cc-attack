@@ -3,6 +3,8 @@ lua-for-cc-attack
 
 lua for nginx cc  attack script shell
 一、文件说明
+
+
 1、block_global_str.lua
 2、block_guest_lua.lua
 
@@ -10,6 +12,8 @@ block_global_str.lua 为初始化变量
 block_guest_lua.lua 主要功能sql注入、上传文件类型控制、xss攻击类型防护、对于部分文件控制访问频率（IP、URL）
 
 二、nginx配置文件
+
+
 lua_shared_dict cc_dict 1024M;  
 init_by_lua_file "/opt/nginx/conf/block_global_str.lua";
         location / {
@@ -26,6 +30,8 @@ init_by_lua_file "/opt/nginx/conf/block_global_str.lua";
 	}
 		
 三、block_guest_lua.lua内容说明
+
+
 param_list为
 1、各项目控制参数
 URL的IP访问频率，URL访问访问频率，IP访问控制时间，URL访问控制时间，IP访问前缀用于区分统计
@@ -50,8 +56,12 @@ local php_post_filter = "28365365.chtz.net|document.createElement"
 local web_str = "@websrv"
 
 四、block_global_lua.lua内容说明
+
+
 1、url白名单，%?转义?
 white_uri={'/test1.php%?ag=10000007&le=1','/test2.php%?ag=10000007&le=1'}   
+
+
 2、ip白名单
 white_ip={
 ['192.168.111'] = '1',
