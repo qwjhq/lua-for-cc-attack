@@ -170,7 +170,7 @@ if white_ip[str_ip] == '1' then
 	for k,v in pairs(list) do
 		if ngx.re.match(uri,v) then
 				block_str_list = eval(k)
-				if  block_str_list[4] == 0 then
+				if  tonumber(block_str_list[4]) == 0 then
 					block_count_url(request_mem_uri,block_str_list[2],block_uri_default_time)
 				else
 					block_count_url(request_mem_uri,block_str_list[2],block_str_list[4])
@@ -213,7 +213,7 @@ for k,v in pairs(list) do
 				end
 				block_img_url(request_img_uri,block_str_list[2],block_uri_default_time)
 			end]]
-			if  block_str_list[4] == 0 then
+			if  tonumber(block_str_list[4]) == 0 then
 				block_count_url(request_mem_uri,block_str_list[2],block_uri_default_time)
 			else
 				block_count_url(request_mem_uri,block_str_list[2],block_str_list[4])
