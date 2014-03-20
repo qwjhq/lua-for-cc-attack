@@ -5,3 +5,4 @@ white_ip={
 ['10.1.1'] = '1' 
 }
 --white_uri={'/test1.php%?arg=10000007&style=1','/test2.php%?arg=10000007&style=1'}
+bad_refer={'js.pe','53licai.081.102dns.info'}
